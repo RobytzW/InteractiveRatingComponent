@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+    /* weights: 400, 700 */
+}
+
+:root {
+    /* Sizes */
+    --fontSize: 15px;
+    --containerWidth: 400px;
+
+    /* Primary */
+    --orange: hsl(25, 97%, 53%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --lightGray: hsl(217, 12%, 63%);
+    --mediumGray: #262f38;
+    --darkBlue: hsl(213, 19%, 18%);
+    --veryDarkBlue: #141519;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--veryDarkBlue);
+}
+
+main {
+    width: min(80%, var(--containerWidth));
+    padding: 2rem;
+    background-color: #202731;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    border-radius: 2rem;
+}
+
+main .first img {
+    background-color: var(--mediumGray);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+main .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+main .text h2 {
+    color: var(--white);
+    font-size: calc(1.7 * var(--fontSize));
+    font-weight: 700;
+}
+
+main .text p {
+    color: var(--lightGray);
+    font-size: var(--fontSize);
+    font-weight: 400;
+}
+
+.ratings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.nonselected {
+    background-color: var(--darkBlue);
+    color: var(--lightGray);
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.1 * var(--fontSize));
+    font-weight: 400;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+.rating:hover {
+    color: var(--white);
+    background-color: var(--lightGray);
+}
+
+main button {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    font-size: calc(.9 * var(--fontSize));
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all .2 ease-out;
+}
+
+button:hover {
+    background-color: var(--white);
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.second {
+    display: none;
+}
+
+#score {
+    font-size: calc(1 * var(--fontSize));
+    font-weight: 400;
+    background-color: var(--mediumGray);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: var(--orange);
+}
+
+#newTitle {
+    color: var(--white);
+    font-weight: 400;
+}
+
+#conclusion {
+    color: var(--lightGray);
+    text-align: center;
+}
+
+@media(max-width: 400px) {
+    .rating {
+        height: 40px;
+        width: 40px;
+    }
+}
